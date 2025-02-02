@@ -1,0 +1,22 @@
+#+title:  README
+#+date: <2025-02-02 So>
+
+
+* scripts
+This repository contains just some scripts that i use/made.
+If you find anything interesting/useful you may take it :D
+
+** tl.py
+tl = timelogger
+
+The org-mode support on mobile is rather sparse and does not cover all features of org-mode.
+Because there is not really a convenient way of clocking into and out of tasks/headings i made this script.
+
+It works in conjunction with ~termux-dialog~ and ~termux-toast~.
+
+*** Dependencies
+- python3
+- *termux-api*
+- jq
+- date
+- grep
