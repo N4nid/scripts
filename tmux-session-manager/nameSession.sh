@@ -2,7 +2,7 @@
 # change my path
 saveDir="$HOME/.tmux/resurrect/"
 
-sessionToName=$(ls -t ${saveDir} | tail -n +2 | fzf)
+sessionToName=$(ls -t ${saveDir} | fzf)
 printf "To abort use Ctr-c or leave empty\n"
 printf "New name for ${sessionToName}: \n"
 read name
@@ -11,6 +11,7 @@ read name
 if [[ -n "$name" ]]; then
   cd ${saveDir}
   mv ${sessionToName} ${name}
+  rm name
   ln -sf ${name} last
   tmux display-message "Done :D"
 else

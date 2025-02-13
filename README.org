@@ -32,7 +32,7 @@ It is just a small script, which works on top of ~tmux-resurrect~.
 
 *** setup
 Before you can get started with this you should first have ~tmux-resurrect~ working and also know its saving directory.
-By default the saving dir is in ~~/.tmux/resurrect~.
+By default the saving dir is in ~/.tmux/resurrect.
 
 Then download the two script files and put them somewhere sensible.
 After that change the path of the save dir in *both* scripts to your path.
@@ -41,7 +41,7 @@ Put the following in your ~.tmux.conf~:
 #+begin_src
 # Also change the paths here
 set -g @resurrect-hook-post-save-all 'tmux display-popup -E "~/scripts/tmux-session-manager/nameSession.sh"'
-set -g @resurrect-hook-pre-restore-all 'bash ~/scripts/tmux-session-manager/choose.sh'
+set -g @resurrect-hook-pre-restore-all 'tmux display-popup -E "~/scripts/tmux-session-manager/choose.sh"'
 #+end_src
 
 And optionaly add a keybind for (re)naming sessions:
