@@ -6,7 +6,14 @@
 This repository contains just some scripts that i use/made.
 If you find anything interesting/useful you may take it :D
 
+*TOC:*
+- [[id:48eaac72-9ee5-42a2-88ef-b22d6cbf1fe0][tl.py]]
+- [[id:33fa9c5b-00cb-4a2a-abd0-e963958adaad][tmux-session-manager]]
+
 ** tl.py
+:PROPERTIES:
+:ID:       48eaac72-9ee5-42a2-88ef-b22d6cbf1fe0
+:END:
 tl = timelogger
 
 The org-mode support on mobile is rather sparse and does not cover all features of org-mode.
@@ -22,6 +29,9 @@ It works in conjunction with ~termux-dialog~ and ~termux-toast~.
 - grep
 
 ** tmux-session-manager
+:PROPERTIES:
+:ID:       33fa9c5b-00cb-4a2a-abd0-e963958adaad
+:END:
 With this you can save sessions, name them and later restore them.
 It is just a small script, which works on top of ~tmux-resurrect~.
 
