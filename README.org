@@ -20,3 +20,34 @@ It works in conjunction with ~termux-dialog~ and ~termux-toast~.
 - jq
 - date
 - grep
+
+** tmux-session-manager
+With this you can save sessions, name them and later restore them.
+It is just a small script, which works on top of ~tmux-resurrect~.
+
+*** Dependencies
+- tmux
+- tmux-resurrect
+- fzf (could be replaced though)
+
+*** setup
+Before you can get started with this you should first have ~tmux-resurrect~ working and also know its saving directory.
+By default the saving dir is in ~~/.tmux/resurrect~.
+
+Then download the two script files and put them somewhere sensible.
+After that change the path of the save dir in *both* scripts to your path.
+
+Put the following in your ~.tmux.conf~:
+#+begin_src
+# Also change the paths here
+set -g @resurrect-hook-post-save-all 'tmux display-popup -E "~/scripts/tmux-session-manager/nameSession.sh"'
+set -g @resurrect-hook-pre-restore-all 'bash ~/scripts/tmux-session-manager/choose.sh'
+#+end_src
+
+And optionaly add a keybind for (re)naming sessions:
+#+begin_src
+# Change the path here
+bind N run-shell -b 'tmux display-popup -E "~/scripts/tmux-session-manager/nameSession.sh"'
+#+end_src
+
+Reload your tmux confing and your done :D
