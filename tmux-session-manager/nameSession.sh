@@ -6,14 +6,15 @@ sessionToName=$(ls -t ${saveDir} | fzf)
 printf "To abort use Ctr-c or leave empty\n"
 printf "New name for ${sessionToName}: \n"
 read name
+printf ${name}
 
 # abort if name is empty
 if [[ -n "$name" ]]; then
   cd ${saveDir}
   mv ${sessionToName} ${name}
-  rm name
+  rm last
   ln -sf ${name} last
-  tmux display-message "Done :D"
+  tmux display-message "Done :3"
 else
   tmux display-message "aborted"
 fi
